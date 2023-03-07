@@ -5,6 +5,9 @@ fixture('Getting Started')
     // given
     .page('https://cursosdedesarrollo.com/pactometro/');
 
+    /*
+    Test sencillo 
+    */
 test('TestCoalicion Psoe-Podemos', async t => {
     // When
     await t.click("#part-PSOE");
@@ -25,7 +28,7 @@ test('TestCoalicion Psoe-Podemos', async t => {
     await t.expect(Selector("#num-sies").innerText)
         .eql("0");
 });
-
+// Test más complejo
 test('Coalicion + Oposicion', async t => {
     // When
     await t.click("#part-PSOE");
