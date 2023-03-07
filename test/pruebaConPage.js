@@ -10,8 +10,8 @@ fixture('Getting Started')
 
 test('My Page Model Test', async t => {
 	const nombre = 'David Vaquero';
-	await t.typeText(myForm.developerNameInput, nombre);
-    await t.click(myForm.submitButton);
+	await myForm.typeTextDeveloperNameInput(nombre);
+    await myForm.clickSubmitButton();
 	const myResults = new MyResults();
     await t.expect(myResults.articleHeader.innerText)
 	.eql("Thank you, "+nombre+"!");
