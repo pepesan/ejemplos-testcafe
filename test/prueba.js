@@ -11,6 +11,7 @@ test('My first test', async t => {
 	await t.typeText('#developer-name', nombre);
 	await t.click('#submit-button');
 	// Then
-	await t.expect(Selector('#article-header').innerText).eql("Thank you, "+nombre+"!");
+	await t.expect(Selector('#article-header').innerText)
+	.eql("Thank you, "+nombre+"!");
 });
 
