@@ -1,0 +1,14 @@
+{
+  "name": "ejemplos-testcafe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "prueba.js",
+  "scripts": {
+    "test": "testcafe chrome prueba.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "testcafe": "^2.4.0"
+  }
+}
