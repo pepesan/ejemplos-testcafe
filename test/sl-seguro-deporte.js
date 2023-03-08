@@ -10,6 +10,10 @@ fixture('Getting Started')
     .page('https://segurodedeportes.santalucia.es/preventivatore;code=santalucia-deporte,santalucia-deporte-rec');
 
 test("Crear Seguro Deporte", async t => {
+    const selectedSport = "ESQUÍ";
+    const selectedAsured = "2";
+    const selectedPeriod = "3 días";
+    const selectedPrice = "9,74";
     // Then
 
     // When
@@ -43,4 +47,15 @@ test("Crear Seguro Deporte", async t => {
         .contains("9,74");
     //When
     await slPrimeraPagina.clickBotonContinuar();
+
+    // Ya en la página de información del seguro
+    //Then
+    await t.expect(slInsuranceInfoPage.sportText.innerText)
+        .eql(selectedSport);
+    await t.expect(slInsuranceInfoPage.asuredText.innerText)
+        .eql(selectedAsured);
+    await t.expect(slInsuranceInfoPage.periodText.innerText)
+        .eql(selectedPeriod);
+    await t.expect(slInsuranceInfoPage.actualPrice.innerText)
+        .contains(selectedPrice);
 })
