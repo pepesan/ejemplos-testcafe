@@ -10,6 +10,11 @@ npm test
 
 testcafe chrome test/prueba.js
 
-## ejecutar con conurrencia
+## ejecutar con concurrencia
 
 testcafe chrome ./test/ --concurrency 3
+
+## ejecutar prueba cucumber
+npm run cucumber
+## ejecutar prueba cucumber prueba especifica
+npm run cucumber .features/test.feature

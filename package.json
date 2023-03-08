@@ -1,14 +1,17 @@
 {
-  "name": "ejemplos-testcafe",
-  "version": "1.0.0",
-  "description": "",
-  "main": "prueba.js",
-  "scripts": {
-    "test": "testcafe chrome prueba.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "testcafe": "^2.4.0"
-  }
+    "name": "ejemplos-testcafe",
+    "version": "1.0.0",
+    "description": "",
+    "main": "prueba.js",
+    "scripts": {
+        "test": "testcafe chrome ./test/",
+        "cucumber": "npx cucumber-js"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@cucumber/cucumber": "^9.0.0",
+        "base64-img": "^1.0.4",
+        "testcafe": "^2.4.0"
+    }
 }
