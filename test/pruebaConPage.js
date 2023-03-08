@@ -8,6 +8,11 @@ fixture('Getting Started')
     // given
     .page('https://devexpress.github.io/testcafe/example');
 
+
+test("Text Main Title", async t =>{
+	await t.expect(myForm.mainTitle.innerText)
+		.eql("Example");
+});
 test('My Page Model Test', async t => {
 	const nombre = 'David Vaquero';
 	await myForm.typeTextDeveloperNameInput(nombre);
