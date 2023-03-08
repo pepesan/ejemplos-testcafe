@@ -4,8 +4,8 @@ export default class SlPrimeraPage{
     constructor() {
         this.botonAceptarCookies = Selector("#onetrust-accept-btn-handler");
         this.selectSport = Selector("#select-sport");
-        this.selectSportOptionEsqui = this.selectSport.find('option').withText('ESQUÍ');
-        this.selectAgeCont = Selector("div.select-age-cont");
+        this.selectSportOptionEsqui = this.selectSport.find('app-main-default option').withText('ESQUÍ');
+        this.selectAgeCont = Selector("app-main-default div.select-age-cont");
         this.botonValidarAges = Selector("app-age-selector div.text-center.container-button.santa-lucia_db.santalucia-deporte button");
         this.botonSumarMayor6064 = Selector("div.age-selection button[data-cy ='age-selector__number-of-insureds-65-add']");
         this.inputSumarMayor6064 = Selector("div.age-selection input[data-cy ='age-selector__number-of-insureds-65-display']");

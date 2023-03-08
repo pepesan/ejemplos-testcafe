@@ -25,7 +25,8 @@ test("Crear Seguro Deporte", async t => {
         .click(slPrimeraPagina.selectSportOptionEsqui);
     // Then
     // comprobar que el value es correcto en el campo select
-    await t.expect(slPrimeraPagina.selectSport.value).eql('6: 002');
+    await t.expect(slPrimeraPagina.selectSport.value)
+        .eql('6: 002');
     // When
     await slPrimeraPagina.clickSelectAgeCont();
     // When
