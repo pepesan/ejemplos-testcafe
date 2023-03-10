@@ -5,7 +5,7 @@ const fs = require("fs");
 
 let testcafe = null;
 const DELAY = 5000;
-var interation = 0;
+var interation = 400;
 function createTestFile () {
     fs.writeFileSync('test.js',
         'import testControllerHolder from "./features/support/testControllerHolder.js";\n\n' +
@@ -15,7 +15,7 @@ function createTestFile () {
         'test("test", testControllerHolder.capture);');
 }
 function runTest () {
-    var runner = null;
+    let runner = null;
     interation++;
     createTestCafe('localhost', 33400 + interation, 33401 + interation)
         .then(function (tc) {
@@ -25,7 +25,10 @@ function runTest () {
             return runner
                 .src('./test.js')
                 .browsers('chrome')
-                .run()
+                .run({
+                    selectorTimeout: 30*1000, // 30 seconds
+                    assertionTimeout: 30*1000
+                })
                 .catch(function (error) {
                     console.log(error);
                 });
@@ -38,8 +41,10 @@ function runTest () {
 
 
 function CustomWorld({attach, parameters}) {
+    this.testControllerHolder = testControllerHolder;
     this.waitForTestController = testControllerHolder.get;
     this.freeTestController = testControllerHolder.free;
+    this.fs = fs;
     this.attach = attach;
     this.parameters = parameters;
     this.createTestFile = createTestFile;

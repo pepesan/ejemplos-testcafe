@@ -1,17 +1,9 @@
-var Selector       = require('testcafe').Selector;
-var Role           = require('testcafe').Role;
+const Selector = require('testcafe').Selector;
+const Role = require('testcafe').Role;
 
-const DELAY = 5000;
-const { Given, When, Then, Before, AfterAll } = require('@cucumber/cucumber');
+const { Given, When, Then } = require('@cucumber/cucumber');
 
-    var testController = null;
-    Before(function (testCase, callback) {
-        const world = this;
-        world.createTestFile();
-        world.runTest();
 
-        setTimeout(callback, DELAY);
-    });
 
     Given('I am open GitHub page', function () {
         return this.waitForTestController()
@@ -28,7 +20,7 @@ const { Given, When, Then, Before, AfterAll } = require('@cucumber/cucumber');
         return testController.typeText(input, text);
     });
 
-    Then('I am pressing {string} key on GitHub', function (text) {
+    Then('I am pressing {string} key', function (text) {
         return testController.pressKey(text);
     });
 
@@ -48,8 +40,5 @@ const { Given, When, Then, Before, AfterAll } = require('@cucumber/cucumber');
         return testController.useRole(gitHubRoleForExample);
     });
 
-    AfterAll(() => {
-        const world = this;
-        // world.freeTestController();
-    })
+
 
